@@ -338,7 +338,7 @@ function toggleShowCompleted() { showCompleted = !showCompleted; renderList(); }
 var saved = localStorage.getItem("lista-familiar-member");
 if (saved) {
   var found = MEMBERS.find(function(m) { return m.id === saved; });
-  if (found) { currentMember = found; }
+  if (found) { currentMember = found; showMainApp(); }
 }
 </script>
 </body>
