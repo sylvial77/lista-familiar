@@ -351,6 +351,22 @@ setTimeout(function() {
     }
   }
 }, 3000);
+var saved = localStorage.getItem("lista-familiar-member");
+if (saved) {
+  var found = MEMBERS.find(function(m) { return m.id === saved; });
+  if (found) { currentMember = found; }
+}
+
+setTimeout(function() {
+  if (document.getElementById("loadingScreen").style.display !== "none") {
+    document.getElementById("loadingScreen").style.display = "none";
+    if (currentMember) {
+      showMainApp();
+    } else {
+      showSelectScreenInit();
+    }
+  }
+}, 3000);
 </script>
 </body>
 </html>
